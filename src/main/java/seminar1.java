@@ -1,13 +1,39 @@
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+
 
 public class seminar1 {
     public static void main(String[] args) {
         //inputNameAndPrintHi();
-        findMaxAndMinElemArray();
+        //findMaxAndMinElemArray();
+        moveElementToEnd();
 
     }
+
+    private static void moveElementToEnd() {
+        int[] array = {3, 2, 2, 1, 5, 3, 3};
+        int val = 3;
+        int i = 0;
+        int j = array.length -1;
+        while (i < j){
+            while (i < j && array[j] == val){
+                j--;
+            }
+            if (array[i] == val){
+                int temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+            }
+            i++;
+        }
+        System.out.println(Arrays.toString(array));
+
+
+    }
+
+
 
     private static void findMaxAndMinElemArray() {
         Scanner in = new Scanner(System.in);
@@ -24,7 +50,7 @@ public class seminar1 {
         int max = getMax(array);
         System.out.println("Максимальное значение массива: " + max);
         int min = getMin(array);
-        System.out.println("Минимальное значение массива: "+min);
+        System.out.println("Минимальное значение массива: " + min);
 
     }
 
